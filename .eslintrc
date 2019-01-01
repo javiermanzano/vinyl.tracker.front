@@ -1,0 +1,53 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+          "jsx": true,
+          "modules": true,
+          "experimentalObjectRestSpread": true
+      }
+  },
+  "extends": "airbnb",
+  "globals": {
+    "window": true,
+    "navigator": true,
+    "fetch": true,
+    "document": true,
+    "it": true,
+    "Feature": true,
+    "Scenario": true,
+    "actor": true,
+    "expect": true
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["./src", "src"]
+      }
+    }
+  },
+  "rules": {
+    "react/jsx-filename-extension": false,
+    "import/no-unresolved": "off",
+    "no-underscore-dangle": 0,
+    "import/prefer-default-export": 0,
+    "jsx-a11y/label-has-associated-control": 0,
+    "jsx-a11y/label-has-for": 0
+  },
+  "overrides": [
+    {
+      "files": ["serviceWorker.js"],
+      "rules": {
+        "import/prefer-default-export": 0
+      }
+    },
+    {
+      "files": ["graphql.js"],
+      "rules": {
+        "no-tabs": 0
+      }
+    }
+  ]
+}

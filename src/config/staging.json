@@ -1,0 +1,4 @@
+{
+  "ENVIRONMENT": "staging",
+  "ENDPOINT": "http://localhost:4000"
+}

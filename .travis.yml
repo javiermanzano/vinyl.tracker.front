@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "10"
+sudo: required
+addons:
+  chrome: stable
+services:
+  - docker
+before_script:
+  - npm install -g json
+  - VERSION=$(cat package.json | json version)
+  - ENVIRONMENT=$(./ci/get-environment.sh)
+  - echo "Building for branch" $TRAVIS_BRANCH
+  - echo "Building for environment" $ENVIRONMENT
+  - echo "Building for version" $VERSION
+script:
+  - yarn lint
